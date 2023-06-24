@@ -2,7 +2,7 @@ export const routes = {
     home: '/',
     about: '/about',
     contact: '/contact',
-    detail: '/detail',
+    dentist: '/dentist/:id',
     favs: '/favs',
     pageNotFound: '*',
 }

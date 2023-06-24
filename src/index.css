@@ -120,3 +120,12 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.images{
+  width: 190px;
+  height: 200px;
+}
+
+.navbar {
+  display: flex;
+}
