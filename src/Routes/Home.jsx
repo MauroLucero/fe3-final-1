@@ -1,12 +1,10 @@
-import React from "react";
 import Card from "../Components/Card";
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
+
 
   const url = "https://jsonplaceholder.typicode.com/users/";
 
@@ -21,7 +19,7 @@ const Home = () => {
   console.log(doctores);
 
   return (
-    <main className="">
+    <main className=''>
       <h1>Home</h1>
       <div className="card-grid">
         {doctores.map((doctor) =>    
