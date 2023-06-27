@@ -1,8 +1,8 @@
 export const routes = {
-    home: '/',
-    about: '/about',
-    contact: '/contact',
-    dentist: '/dentist/:id',
-    favs: '/favs',
-    pageNotFound: '*',
-}
+  home: "/",
+  about: "/about",
+  contact: "/contact",
+  detail: "/detail/:id",
+  favs: "/favs",
+  pageNotFound: "*",
+};

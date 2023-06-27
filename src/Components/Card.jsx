@@ -1,18 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ContextGlobal } from "./utils/global.context";
+import { useContext } from "react";
 
 const Card = ({ name, username, id }) => {
-  const addFav = () => {
+  const { dentistaState, dentistaDispatch } = useContext(ContextGlobal);
+
+  const esFav = dentistaState.favList.find((fav) => fav.id === id);
+
+  const addFav = (e) => {
     // Aqui iria la logica para agregar la Card en el localStorage
+    e.stopPropagation();
+    if (esFav != null) {
+      dentistaDispatch({ type: "DELETE_FAV", payload: id });
+    } else {
+      dentistaDispatch({ type: "ADD_FAV", payload: { name, username, id } });
+    }
   };
 
   return (
     <div className="card">
-      <Link to={'/dentist/'+ id}>
+      <Link to={"/detail/" + id}>
         {/* En cada card deberan mostrar en name - username y el id */}
-          <img src={"./images/doctor.jpg"} alt="doctor-logo" className="images" />
-          <h2>{name}</h2>
-          <p>{username}</p>
+        <img src={"./images/doctor.jpg"} alt="doctor-logo" className="images" />
+        <h2>{name}</h2>
+        <p>{username}</p>
       </Link>
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
@@ -25,5 +37,3 @@ const Card = ({ name, username, id }) => {
 };
 
 export default Card;
-
-
