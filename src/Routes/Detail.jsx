@@ -20,25 +20,26 @@ const Dentist = () => {
 
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   const dentista = dentistaState?.dentista;
-  console.log(dentista);
 
   return (
     <>
       <h1>Dentist id # {dentista.id} </h1>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Website</th>
-        </tr>
-        <tr>
-          <td>{dentista.name}</td>
-          <td>{dentista.email}</td>
-          <td>{dentista.phone}</td>
-          <td>{dentista.website}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+          </tr>
+          <tr>
+            <td>{dentista.name}</td>
+            <td>{dentista.email}</td>
+            <td>{dentista.phone}</td>
+            <td>{dentista.website}</td>
+          </tr>
+        </tbody>
       </table>
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
