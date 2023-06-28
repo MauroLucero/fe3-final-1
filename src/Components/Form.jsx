@@ -42,6 +42,7 @@ const Form = () => {
     <div>
       <h1>Contact</h1>
       <form onSubmit={handleSubmit}>
+        <table>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -64,6 +65,7 @@ const Form = () => {
         <div>
         <button type="submit" className='myButton'>Send</button>
         </div>
+        </table>
       </form>
       {successMessage && <p>{successMessage}</p>}
     </div>
