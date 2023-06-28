@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 export const ContextGlobal = createContext();
 
@@ -37,8 +37,31 @@ const dentistaReducer = (state, action) => {
         favList: state.favList,
         dentista: action.payload,
       };
+    default:
+      return state;
   }
 };
+
+// toggle
+
+const initialState = {
+  darkMode: false
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'TOGGLE_THEME':
+      return {
+        ...state,
+        darkMode: !state.darkMode
+      };
+    default:
+      return state;
+    }
+  };
+
+
+
 
 export const ContextProvider = ({ children }) => {
   const [dentistaState, dentistaDispatch] = useReducer(
@@ -60,8 +83,25 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem("dentistas", JSON.stringify(dentistaState));
   }, [dentistaState]);
 
+  //toggle theme
+
+  const [themeState, themeDispatch] = useReducer(reducer, initialState);
+
+  const toggleTheme = () => {
+    themeDispatch({ type: 'TOGGLE_THEME' });
+  };
+
+  if (themeState.darkMode) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+
+
+
+
   return (
-    <ContextGlobal.Provider value={{ dentistaState, dentistaDispatch }}>
+    <ContextGlobal.Provider value={{ dentistaState, dentistaDispatch, themeState, themeDispatch, toggleTheme}}>
       {children}
     </ContextGlobal.Provider>
   );
