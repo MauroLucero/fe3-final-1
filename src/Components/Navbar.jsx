@@ -7,11 +7,8 @@ import { ContextGlobal } from './utils/global.context'
 
 const Navbar = () => {
 
+  const {themeState, toggleTheme} = useContext(ContextGlobal);
 
-  // const [{theme, isDark}, toggleTheme] = useContext(ContextGlobal);
-
-
-  // const {darkMode, toggleTheme} = useContext(ContextGlobal)
 
   return (
     <nav>
@@ -23,7 +20,9 @@ const Navbar = () => {
               <Link to={routes.favs}><h4 className='link'>Favs</h4></Link>
 {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
           </div>
-             <button className='myButton'>Change theme</button>
+             <button className='myButton' onClick={toggleTheme}>
+             {themeState.darkMode ? 'Dark Theme' : 'Light Theme'}
+              </button>
     </nav>
   )
 }
