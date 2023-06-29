@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ContextGlobal } from "../Components/utils/global.context";
 import { useContext } from "react";
 
@@ -21,6 +21,12 @@ const Dentist = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   const dentista = dentistaState?.dentista;
 
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <h1>Dentist id # {dentista.id} </h1>
@@ -40,7 +46,10 @@ const Dentist = () => {
             <td>{dentista.website}</td>
           </tr>
         </tbody>
+        <button onClick={goBack} className="myButton">Atras</button>
       </table>
+
+    
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
   );
