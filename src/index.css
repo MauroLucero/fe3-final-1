@@ -1,100 +1,119 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
 
-h1{
+h1 {
   text-align: center;
 }
 
 p {
-   text-align: center;
-
+  text-align: center;
 }
 
-nav{
+nav {
   display: flex;
-  width: 80vw;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  
+  height: 100px;
+  padding: 0 7vw;
 }
 
+.logo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-a{
+.logo-nav > h1 {
+  font-size: 50px;
+  font-weight: 500;
+}
+.logo-nav .logo-first {
+  color: #ff0000;
+}
+
+.link {
+  margin: 10px;
+}
+
+a {
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-a:hover{
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
 
 footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
-  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: absolute;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-top: 2rem;
+  background-color: #ccc;
 }
 
-footer > img{
+footer > img {
   width: 200px;
   margin: 0;
 }
-footer > p{
+
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form div{
+form {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-}
-
-.card{
-  display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
-  border-radius: 15px;
+  width: 300px;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(0, 0, 0);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+label {
+  margin-bottom: 0.5rem;
 }
 
-.card-grid{
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-Button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-Button:hover {
+  background-color: #0056b3;
+}
+
+.card-grid {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
@@ -105,15 +124,15 @@ form div{
 }
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    /* border: 1px solid #ccc; */
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  /* border: 1px solid #ccc; */
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -123,15 +142,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
-  color: white;
-}
-.dark > a {
-  color: white;
-}
-
-.images{
+.images {
   width: 200px;
   height: 200px;
 }
@@ -140,31 +151,32 @@ tr:nth-child(even) {
   display: flex;
 }
 
-.myButton {
-  /* Propiedades de dimensiones y espaciado */
+.back-button,
+.theme-button,
+.form-Button {
   width: 150px;
   height: 40px;
   padding: 10px;
-  
-  /* Propiedades de fondo y color de texto */
   background-color: #727272;
   color: white;
-  
-  /* Propiedades de borde y efectos */
   border: none;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  
-  /* Estilos de texto */
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  
-  /* Efecto al pasar el mouse */
   transition: background-color 0.3s ease;
 }
 
-.myButton:hover {
+.theme-button:hover {
+  background-color: #454745;
+}
+
+.form-Button:hover {
+  background-color: #454745;
+}
+
+.back-button:hover {
   background-color: #454745;
 }
 .socialIcons {
@@ -176,4 +188,99 @@ tr:nth-child(even) {
   width: 25px;
   height: 25px;
   margin: 5px;
+  filter: invert(100%);
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 400px;
+  margin: 10px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.card:hover {
+  border: 0.5px solid rgb(0, 0, 0);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.card h3,
+.card p {
+  margin: 0;
+}
+
+.favButton {
+  background-color: #ccc;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.favButton.isFav {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.dark {
+  background-color: #222222;
+  color: white;
+}
+.dark > a {
+  color: white;
+}
+
+.dark .card {
+  background-color: #333;
+  border-color: #666;
+}
+
+.dark .card h3,
+.dark .card p {
+  color: #fff;
+}
+
+.dark .favButton {
+  background-color: #727272;
+  color: rgb(255, 255, 255);
+}
+
+.dark .favButton:hover {
+  background-color: #454745;
+}
+
+.dark .logo-footer {
+  filter: invert(100%);
+}
+
+.dark .favButton.isFav {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.dark .socialIcons > img {
+  filter: invert(0%);
+}
+
+.dark .link {
+  color: white;
+}
+
+.dark footer {
+  background-color: #000000;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

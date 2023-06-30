@@ -46,10 +46,11 @@ const Dentist = () => {
             <td>{dentista.website}</td>
           </tr>
         </tbody>
-        <button onClick={goBack} className="myButton">Atras</button>
       </table>
+      <button onClick={goBack} className="back-button">
+        Atras
+      </button>
 
-    
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
   );

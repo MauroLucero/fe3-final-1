@@ -1,48 +1,48 @@
 import React, { useState } from "react";
 
-
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const handleNameChange = event => {
+  const handleNameChange = (event) => {
     setName(event.target.value);
-    setError('');
+    setError("");
   };
 
-  const handleEmailChange = event => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
-    setError('');
+    setError("");
   };
 
   // Función para manejar el envío del formulario
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     // Validaciones del formulario
-    if (name.length <= 5 || !email.includes('@')) {
-      setError('Por favor verifique su información nuevamente');
+    if (name.length <= 5 || !email.includes("@")) {
+      setError("Por favor verifique su información nuevamente");
       return;
     }
 
     // Mostrar mensaje de éxito
-    setSuccessMessage(`Gracias ${name}, te contactaremos cuanto antes vía correo electrónico`);
+    setSuccessMessage(
+      `Gracias ${name}, te contactaremos cuanto antes vía correo electrónico`
+    );
 
     // Limpiar los campos del formulario
-    setName('');
-    setEmail('');
-    setError('');
+    setName("");
+    setEmail("");
+    setError("");
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Contact</h1>
       <form onSubmit={handleSubmit}>
-        <table>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -62,10 +62,9 @@ const Form = () => {
           />
         </div>
         {error && <p>{error}</p>}
-        <div>
-        <button type="submit" className='myButton'>Send</button>
-        </div>
-        </table>
+        <button type="submit" className="form-Button">
+          Send
+        </button>
       </form>
       {successMessage && <p>{successMessage}</p>}
     </div>

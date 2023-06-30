@@ -23,14 +23,17 @@ const Card = ({ name, username, id }) => {
       <Link to={"/detail/" + id}>
         {/* En cada card deberan mostrar en name - username y el id */}
         <img src={"./images/doctor.jpg"} alt="doctor-logo" className="images" />
-        <h2>{name}</h2>
+        <h3>{name}</h3>
         <p>{username}</p>
       </Link>
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      <button onClick={addFav} className="favButton">
-        Add fav
+      <button
+        onClick={addFav}
+        className={esFav ? "favButton isFav" : "favButton"}
+      >
+        {esFav ? "Remove fav" : "Add fav"}
       </button>
     </div>
   );
