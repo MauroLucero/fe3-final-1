@@ -57,6 +57,16 @@ a:hover {
   color: rgb(136, 136, 136);
 }
 
+.div-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-outlet {
+  flex: 1;
+}
+
 footer {
   display: flex;
   justify-content: center;
