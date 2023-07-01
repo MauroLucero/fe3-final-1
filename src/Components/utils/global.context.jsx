@@ -8,6 +8,10 @@ const initState = JSON.parse(localStorage.getItem("dentistas")) || {
   dentista: {},
 };
 
+const themeInit = JSON.parse(localStorage.getItem("theme")) || {
+  theme: false,
+};
+
 const url = "https://jsonplaceholder.typicode.com/users/";
 
 const dentistaReducer = (state, action) => {
@@ -66,6 +70,8 @@ export const ContextProvider = ({ children }) => {
     initState
   );
 
+  const [themeState, themeDispatch] = useReducer(reducer, themeInit);
+
   useEffect(() => {
     const fetchDentistas = async () => {
       const response = await fetch(url);
@@ -80,11 +86,9 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem("dentistas", JSON.stringify(dentistaState));
   }, [dentistaState]);
 
-  const [themeState, themeDispatch] = useReducer(reducer, initialState);
-
-  const toggleTheme = () => {
-    themeDispatch({ type: "TOGGLE_THEME" });
-  };
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(themeState));
+  }, [themeState]);
 
   if (themeState.darkMode) {
     document.body.classList.add("dark");
@@ -99,7 +103,6 @@ export const ContextProvider = ({ children }) => {
         dentistaDispatch,
         themeState,
         themeDispatch,
-        toggleTheme,
       }}
     >
       {children}

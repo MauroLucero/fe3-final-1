@@ -26,6 +26,7 @@ const Card = ({ name, username, id }) => {
         <h3>{name}</h3>
       </Link>
       <p>{username}</p>
+      <p>Id: {id}</p>
 
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 

@@ -6,15 +6,21 @@ import { ContextGlobal } from "./utils/global.context";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  const { themeState, toggleTheme } = useContext(ContextGlobal);
+  const { themeState, themeDispatch } = useContext(ContextGlobal);
+
+  const toggleTheme = () => {
+    themeDispatch({ type: "TOGGLE_THEME" });
+  };
 
   return (
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      <div className="logo-nav">
-        <h1 className="logo-first">D</h1>
-        <h1>H Odonto</h1>
-      </div>
+      <Link to={"/"}>
+        <div className="logo-nav">
+          <h1 className="logo-first">D</h1>
+          <h1>H Odonto</h1>
+        </div>
+      </Link>
       <div className="navbar">
         {/* <button onClick={() => navigate(-1)}>↩Back</button> */}
         <Link to={routes.home}>
