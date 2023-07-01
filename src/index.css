@@ -43,6 +43,10 @@ nav {
   color: #ff0000;
 }
 
+.logo-nav:hover {
+  transform: scale(1.1);
+}
+
 .link {
   margin: 10px;
 }
@@ -53,8 +57,8 @@ a {
   margin: 5px;
   cursor: pointer;
 }
-a:hover {
-  color: rgb(136, 136, 136);
+.card > a:hover {
+  color: rgb(165, 161, 161);
 }
 
 .div-layout {
@@ -207,6 +211,7 @@ tr:nth-child(even) {
 }
 
 .card {
+  transition: transform 0.3s ease;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -222,6 +227,7 @@ tr:nth-child(even) {
 }
 
 .card:hover {
+  transform: scale(1.1);
   border: 0.5px solid rgb(0, 0, 0);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
@@ -251,6 +257,10 @@ tr:nth-child(even) {
   color: #fff;
 }
 
+.logo-nav {
+  transition: transform 0.3s ease;
+}
+
 .dark {
   background-color: #222222;
   color: white;
@@ -260,9 +270,9 @@ tr:nth-child(even) {
 }
 
 .dark .card {
+  transition: transform 0.3s ease;
   background-color: #333;
   border-color: #666;
-  transition: background-color 0.3s ease;
 }
 
 .dark .card h3,
@@ -313,4 +323,16 @@ tr:nth-child(even) {
 
 .dark td {
   background-color: #333;
+}
+
+.dark .logo-nav {
+  color: white;
+}
+
+.dark .logo-nav:hover {
+  transform: scale(1.1);
+}
+
+.dark .card h3:hover {
+  color: #979797;
 }

@@ -15,10 +15,12 @@ const Navbar = () => {
   return (
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      <div className="logo-nav">
-        <h1 className="logo-first">D</h1>
-        <h1>H Odonto</h1>
-      </div>
+      <Link to={"/"}>
+        <div className="logo-nav">
+          <h1 className="logo-first">D</h1>
+          <h1>H Odonto</h1>
+        </div>
+      </Link>
       <div className="navbar">
         {/* <button onClick={() => navigate(-1)}>↩Back</button> */}
         <Link to={routes.home}>
